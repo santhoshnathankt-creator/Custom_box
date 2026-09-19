@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/static-build",
+      "use": "@vercel-static-build",
       "config": {
         "distDir": "dist/public"
       }
@@ -13,6 +13,10 @@
     {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.+\\.(jpg|jpeg|png|webp|svg|ico))$",
+      "dest": "/$1"
     },
     {
       "src": "/(.*)",
